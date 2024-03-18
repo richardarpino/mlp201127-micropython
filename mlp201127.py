@@ -13,11 +13,11 @@ class PowerDisplay(max7219.SevenSegment):
     # Init Class with pins that MLP201127 is connected to
     def __init__(self, cs: Pin, spi_bus: Pin, speaker: Pin=None):
         
-        # cs: Clock Pin e.g. cs = Pin(5, Pin.OUT)
-        # spi_bus: SPI Bus e.g SPI(0, baudrate=10000000, polarity=1, phase=1, sck=Pin(2), mosi=Pin(3))
-        # speaker: Speaker Pin e.g Pin(7, Pin.OUT)
+        #cs: Clock Pin e.g. cs = Pin(5, Pin.OUT)
+        #spi_bus: SPI Bus e.g SPI(0, baudrate=10000000, polarity=1, phase=1, sck=Pin(2), mosi=Pin(3))
+        #speaker: Speaker Pin e.g Pin(7, Pin.OUT)
         
-        # NOTE: We have to re-implement what is in our base class init as I found
+        # NOTE: We have to re-implement basically what is in our base class init as I found
         # this board gets a bit weird on power cycle unless you send the mosi and sck pins
         # rather than use the defaults - which is what max7219.SevenSegment does
         self.scan_digits = self.digits = 4
@@ -36,7 +36,7 @@ class PowerDisplay(max7219.SevenSegment):
         self.brightness(7)                        # intensity: range: 0..15
         self.reset()
 
-    # reset - reset all the registers on the board or just the leds (you can use the base classes' 'clear' for just the digits)
+    # reset - reset all the registers on the board or just the leds (you can use the base classes 'clear' for just the digits)
     def reset(self, led_only:bool = False):
         for register in range(5, 8):
              self._write([register, 0x0])
@@ -48,6 +48,8 @@ class PowerDisplay(max7219.SevenSegment):
         setting = value
         if setting >= len(PowerDisplay.Bar_1):
             setting = len(PowerDisplay.Bar_1) - 1
+        if setting < 0:
+            setting = 0
         self._write(bytearray([5, PowerDisplay.Bar_1[setting]]))
         self._write(bytearray([6, PowerDisplay.Bar_2[setting]]))
         self._write(bytearray([7, PowerDisplay.Bar_3[setting]]))
