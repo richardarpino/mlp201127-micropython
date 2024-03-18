@@ -7,6 +7,8 @@ Based on the MAX7219, the first 4 registers are for the 4x7 digit LED dispay and
 
 Implementation inherits from [micropython-MAX7219](https://github.com/JennaSys/micropython-max7219/) which provides excellent support for the LED digits and I added an additional methods to initialise using specific Pins, set the leds using an integer and reset.
 
+![RPi Pico with the ML201127 Display](https://github.com/richardarpino/mlp201127-micropython/blob/main/MLP201127%20with%20RPi%20Pico.jpg)
+
 ## Example Implementation
 | Board       | GPIO        | RPI Pin     |
 | ----------- | ----------- | ----------- |
