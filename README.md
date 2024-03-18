@@ -1,4 +1,4 @@
-# MLP201127 MicroPython driver based on RPI Pico
+# MLP201127 MicroPython driver (example for RPi Pico)
 Python driver for Mottram Labs MLP201127 LED and 4x7 Segment Display based on MAX7219
 
 You can find more about this driver from the [maker](https://www.mottramlabs.com/): [Round LED Bar Graph Power Display - RED - Arduino - ESP8266 - MLP201127](https://www.ebay.co.uk/itm/133752718757)
