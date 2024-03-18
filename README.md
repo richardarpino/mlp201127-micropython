@@ -15,8 +15,11 @@ Implementation inherits from [micropython-MAX7219](https://github.com/JennaSys/m
 | din         | gpio3       | 5           |
 | cs          | gpio5       | 7           |
 | clk         | gpio2       | 4           |
-| spkr        | gpio7       | 10          |
+| spkr*       | gpio7       | 10          |
+| vcc         | vbus        | 40          |
+| gnd         | gnd         | 38          |
 
+* Optional - only provide pin if you have connected it
 ```
 # Import MicroPython libraries of PIN and SPI
 from mlp201127 import PowerDisplay
