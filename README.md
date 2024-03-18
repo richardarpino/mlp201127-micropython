@@ -9,7 +9,7 @@ Implementation inherits from [micropython-MAX7219](https://github.com/JennaSys/m
 
 ![RPi Pico with the ML201127 Display](https://github.com/richardarpino/mlp201127-micropython/blob/main/MLP201127%20with%20RPi%20Pico.jpg)
 
-## Example Implementation
+## Example Pins
 | Board       | GPIO        | RPI Pin     |
 | ----------- | ----------- | ----------- |
 | din         | gpio3       | 5           |
@@ -19,7 +19,9 @@ Implementation inherits from [micropython-MAX7219](https://github.com/JennaSys/m
 | vcc         | vbus        | 40          |
 | gnd         | gnd         | 38          |
 
-* Optional - only provide pin if you have connected it
+** Optional - only provide pin if you have connected it
+
+## Example Code
 ```
 # Import MicroPython libraries of PIN and SPI
 from mlp201127 import PowerDisplay
